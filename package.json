@@ -5,7 +5,7 @@
   "description": "This is a storybook test (v9)",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/juanma-acuna/storybook-test-9.git"
+    "url": "git+https://github.com/juanma-acuna/storybook-test-11.git"
   },
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
