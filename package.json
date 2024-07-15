@@ -1,6 +1,7 @@
 {
   "name": "@juanma-acuna/storybook-test-9",
   "version": "0.22.0",
+  "private": false,
   "description": "This is a storybook test (v9)",
   "repository": {
     "type": "git",
