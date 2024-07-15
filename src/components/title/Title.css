@@ -1,0 +1,18 @@
+.title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  font-size: 2em;
+  color: #333;
+  margin-bottom: 0.25em;
+  border-radius: 30px;
+  background-color: violet;
+  color: #5e5e5e;
+}
+
+.extra {
+  background-color: darkblue;
+  color: white;
+  font-weight: 500;
+}
