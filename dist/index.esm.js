@@ -1,29 +1,10 @@
 import { jsx } from 'react/jsx-runtime';
 
-const Button = ({ label, backgroundColor = '#0F8ADE', color = '#FFFFFF', size = 'md', onClick, }) => {
-    let scale = 1;
-    if (size === 'sm') {
-        scale = 0.7;
-    }
-    else if (size === 'lg') {
-        scale = 1.5;
-    }
-    const style = {
-        backgroundColor,
-        color,
-        padding: `${scale * 0.8}rem ${scale * 1.2}rem`,
-        fontSize: `${scale * 1}rem`,
-        border: 'none',
-        borderRadius: '12px',
-    };
-    return (jsx("button", { onClick: onClick, style: style, children: label }));
-};
-
 function styleInject(css, ref) {
   if ( ref === void 0 ) ref = {};
   var insertAt = ref.insertAt;
 
-  if (typeof document === 'undefined') { return; }
+  if (!css || typeof document === 'undefined') { return; }
 
   var head = document.head || document.getElementsByTagName('head')[0];
   var style = document.createElement('style');
@@ -46,8 +27,8 @@ function styleInject(css, ref) {
   }
 }
 
-var css_248z = ".title {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  height: 100px;\n  font-size: 2em;\n  color: #333;\n  margin-bottom: 0.25em;\n  border-radius: 30px;\n  background-color: violet;\n  color: #5e5e5e;\n}\n\n.extra {\n  background-color: darkblue;\n  color: white;\n  font-weight: 500;\n}\n";
-styleInject(css_248z);
+var css_248z$1 = ".button {\n  cursor: pointer;\n}";
+styleInject(css_248z$1);
 
 function getDefaultExportFromCjs (x) {
 	return x && x.__esModule && Object.prototype.hasOwnProperty.call(x, 'default') ? x['default'] : x;
@@ -132,6 +113,28 @@ var classnames = {exports: {}};
 
 var classnamesExports = classnames.exports;
 var classNames = /*@__PURE__*/getDefaultExportFromCjs(classnamesExports);
+
+const Button = ({ label, backgroundColor = '#0F8ADE', color = '#FFFFFF', size = 'md', onClick, className, }) => {
+    let scale = 1;
+    if (size === 'sm') {
+        scale = 0.7;
+    }
+    else if (size === 'lg') {
+        scale = 1.5;
+    }
+    const style = {
+        backgroundColor,
+        color,
+        padding: `${scale * 0.8}rem ${scale * 1.2}rem`,
+        fontSize: `${scale * 1}rem`,
+        border: 'none',
+        borderRadius: '12px',
+    };
+    return (jsx("button", { onClick: onClick, style: style, className: classNames('button', className), children: label }));
+};
+
+var css_248z = ".title {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  height: 100px;\n  font-size: 2em;\n  color: #333;\n  margin-bottom: 0.25em;\n  border-radius: 30px;\n  background-color: violet;\n  color: #5e5e5e;\n}\n\n.extra {\n  background-color: darkblue;\n  color: white;\n  font-weight: 500;\n}\n";
+styleInject(css_248z);
 
 const Title = ({ label, className }) => {
     return jsx("h1", { className: classNames('title', className), children: label });

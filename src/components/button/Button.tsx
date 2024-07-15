@@ -1,3 +1,6 @@
+import './Button.css';
+import classNames from 'classnames';
+
 // Define a type for the Button props
 export type ButtonProps = {
   label: string;
@@ -5,6 +8,7 @@ export type ButtonProps = {
   color?: string;
   size?: 'sm' | 'md' | 'lg';
   onClick: () => {};
+  className?: string;
 };
 
 const Button: React.FC<ButtonProps> = ({
@@ -13,6 +17,7 @@ const Button: React.FC<ButtonProps> = ({
   color = '#FFFFFF',
   size = 'md',
   onClick,
+  className,
 }) => {
   let scale = 1;
   if (size === 'sm') {
@@ -31,7 +36,7 @@ const Button: React.FC<ButtonProps> = ({
   };
 
   return (
-    <button onClick={onClick} style={style}>
+    <button onClick={onClick} style={style} className={classNames('button', className)}>
       {label}
     </button>
   );
